@@ -21,9 +21,9 @@ export default async function PostPage({ params }) {
 
   if (!post) {
     return (
-      <main className="blog-container">
+      <main className="max-w-3xl mx-auto px-6 py-12 md:py-16">
         <h1>Post not found</h1>
-        <Link href="/" className="back-link">
+        <Link href="/" className="inline-block mb-8 text-slate-600 dark:text-slate-400 text-sm hover:text-slate-900 dark:hover:text-white transition-colors">
           ← Back to archive
         </Link>
       </main>
@@ -38,17 +38,17 @@ export default async function PostPage({ params }) {
   const mainContent = contentLines.slice(contentStart + 1).join("\n").trim();
 
   return (
-    <article className="blog-container">
-      <Link href="/" className="back-link">
+    <article className="max-w-3xl mx-auto px-6 py-12 md:py-16">
+      <Link href="/" className="inline-block mb-8 text-slate-600 dark:text-slate-400 text-sm hover:text-slate-900 dark:hover:text-white transition-colors">
         ← Back to archive
       </Link>
 
-      <header className="post-header">
-        <h1 className="post-title">{post.title}</h1>
-        <time className="post-date">{post.date}</time>
+      <header className="mb-8 pb-8 border-b-2 border-slate-200 dark:border-slate-800">
+        <h1 className="text-slate-900 dark:text-white mb-2">{post.title}</h1>
+        <time className="block text-slate-600 dark:text-slate-400 text-base">{post.date}</time>
       </header>
 
-      <div className="post-content">
+      <div className="text-lg leading-relaxed space-y-6">
         {mainContent.split("\n\n").map((paragraph, i) => (
           <p key={i}>{paragraph}</p>
         ))}
