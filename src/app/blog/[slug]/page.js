@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getPostBySlug, getPosts } from "../../lib/posts";
+import { getImagePath } from "../../lib/imagePath";
 
 export async function generateStaticParams() {
   const posts = await getPosts();
@@ -52,8 +53,19 @@ export default async function PostPage({ params }) {
       </Link>
 
       <header className="mb-8 pb-8 border-b border-gray-300 dark:border-gray-700">
-        <h1 className="text-gray-900 dark:text-white mb-2">{post.title}</h1>
-        <time className="block text-gray-600 dark:text-gray-500 text-base">{post.date}</time>
+        <div className="flex justify-between items-start gap-4">
+          <div>
+            <h1 className="text-gray-900 dark:text-white mb-2">{post.title}</h1>
+            <time className="block text-gray-600 dark:text-gray-500 text-base">{post.date}</time>
+          </div>
+          <img
+            src={getImagePath("ostrich-skeleton.png")}
+            alt="Ostrich skeleton"
+            width={50}
+            height={50}
+            className="flex-shrink-0 dark:invert"
+          />
+        </div>
       </header>
 
       <div className="text-lg leading-relaxed space-y-6 text-gray-900 dark:text-gray-100">
