@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getPosts } from "../lib/posts";
+import { getImagePath } from "../lib/imagePath";
 
 export default async function Archive() {
   const posts = await getPosts();
@@ -29,7 +30,7 @@ export default async function Archive() {
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0">
                       <img
-                        src={`/${day}.calendar.png`}
+                        src={getImagePath(`${day}.calendar.png`)}
                         alt={`Calendar - ${day}`}
                         width={35}
                         height={35}
