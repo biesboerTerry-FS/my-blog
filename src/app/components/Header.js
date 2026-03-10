@@ -7,6 +7,10 @@ import { getImagePath } from "../lib/imagePath";
 export default function Header() {
   const pathname = usePathname();
   
+  // Hide header on individual post pages
+  const isPostPage = pathname.startsWith('/blog/');
+  if (isPostPage) return null;
+  
   // Show "Archive" only on home page, otherwise show "Home"
   const isHome = pathname === '/';
   

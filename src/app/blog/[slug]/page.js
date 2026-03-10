@@ -48,36 +48,19 @@ export default async function PostPage({ params }) {
 
   return (
     <article className="max-w-3xl mx-auto px-6 py-12 md:py-16">
-      <Link href="/archive" className="inline-block mb-8 text-gray-600 dark:text-gray-400 text-sm hover:text-gray-700 dark:hover:text-gray-300 transition-colors">
-        ← Back to archive
-      </Link>
+      <div className="flex flex-col gap-2 mb-8">
+        <Link href="/archive" className="inline-block text-gray-600 dark:text-gray-400 text-sm hover:text-gray-700 dark:hover:text-gray-300 transition-colors">
+          ← Back to archive
+        </Link>
+        <Link href="/" className="inline-block text-gray-600 dark:text-gray-400 text-sm hover:text-gray-700 dark:hover:text-gray-300 transition-colors">
+         ← Back to home
+        </Link>
+      </div>
 
-      <header className="mb-8 pb-8" style={{ borderBottom: '1px solid #999' }}>
-        <div className="flex justify-between items-start gap-4">
-          <div>
-            <h1 className="text-gray-900 dark:text-white mb-2">{post.title}</h1>
-            <time className="block text-gray-600 dark:text-gray-500 text-base">{post.date}</time>
-          </div>
-          <div className="flex gap-3 flex-shrink-0">
-            <img
-              src={getImagePath("hubert.png")}
-              alt="Hubert skeleton"
-              width={100}
-              height={100}
-              className="hidden dark:block rounded-full object-cover"
-              style={{ borderWidth: '3px', borderColor: '#CCD1D8' }}
-            />
-            <img
-              src={getImagePath("hubert.png")}
-              alt="Hubert skeleton inverted"
-              width={100}
-              height={100}
-              className="block dark:hidden rounded-full object-cover invert"
-              style={{ borderWidth: '3px', borderColor: '#302C23' }}
-            />
-          </div>
-        </div>
-      </header>
+      <div className="mb-8">
+        <h1 className="text-gray-900 dark:text-white mb-2">{post.title}</h1>
+        <time className="block text-gray-600 dark:text-gray-500 text-base">{post.date}</time>
+      </div>
 
       <div className="text-lg leading-relaxed space-y-6 text-gray-900 dark:text-gray-100">
         {mainContent.split("\n\n").map((paragraph, i) => (
