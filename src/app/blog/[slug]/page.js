@@ -52,7 +52,7 @@ export default async function PostPage({ params }) {
         ← Back to archive
       </Link>
 
-      <header className="mb-8 pb-8 border-b border-gray-300 dark:border-gray-700">
+      <header className="mb-8 pb-8" style={{ borderBottom: '1px solid #999' }}>
         <div className="flex justify-between items-start gap-4">
           <div>
             <h1 className="text-gray-900 dark:text-white mb-2">{post.title}</h1>
@@ -62,16 +62,18 @@ export default async function PostPage({ params }) {
             <img
               src={getImagePath("hubert.png")}
               alt="Hubert skeleton"
-              width={64}
-              height={64}
-              className="rounded-full border-2 border-gray-900 dark:border-white object-cover"
+              width={100}
+              height={100}
+              className="hidden dark:block rounded-full object-cover"
+              style={{ borderWidth: '3px', borderColor: '#CCD1D8' }}
             />
             <img
               src={getImagePath("hubert.png")}
               alt="Hubert skeleton inverted"
-              width={64}
-              height={64}
-              className="rounded-full border-2 border-gray-900 dark:border-white object-cover invert"
+              width={100}
+              height={100}
+              className="block dark:hidden rounded-full object-cover invert"
+              style={{ borderWidth: '3px', borderColor: '#302C23' }}
             />
           </div>
         </div>

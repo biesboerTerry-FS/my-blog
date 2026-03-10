@@ -6,7 +6,15 @@
   }
 
   body {
-    @apply bg-white text-gray-900 dark:bg-black dark:text-gray-100 transition-colors duration-300;
+    @apply text-gray-900 transition-colors duration-300;
+    background-color: #CCD1D8;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #302C23;
+      @apply text-gray-100;
+    }
   }
 
   h1, h2, h3, h4, h5, h6 {

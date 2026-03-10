@@ -11,7 +11,7 @@ export default function Header() {
   const isHome = pathname === '/';
   
   return (
-    <nav className="border-b border-gray-300 dark:border-gray-700">
+    <nav style={{ borderBottom: '1px solid #999' }}>
       <div className="max-w-3xl mx-auto px-4 py-4 flex justify-between items-center">
         <Link 
           href={isHome ? "/archive" : "/"} 
@@ -23,16 +23,18 @@ export default function Header() {
           <img
             src={getImagePath("hubert.png")}
             alt="Hubert skeleton"
-            width={56}
-            height={56}
-            className="rounded-full border-2 border-gray-900 dark:border-white object-cover"
+            width={80}
+            height={80}
+            className="hidden dark:block rounded-full object-cover"
+            style={{ borderWidth: '3px', borderColor: '#CCD1D8' }}
           />
           <img
             src={getImagePath("hubert.png")}
             alt="Hubert skeleton inverted"
-            width={56}
-            height={56}
-            className="rounded-full border-2 border-gray-900 dark:border-white object-cover invert"
+            width={80}
+            height={80}
+            className="block dark:hidden rounded-full object-cover invert"
+            style={{ borderWidth: '3px', borderColor: '#302C23' }}
           />
         </div>
       </div>
