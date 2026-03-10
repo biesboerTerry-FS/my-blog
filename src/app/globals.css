@@ -6,7 +6,7 @@
   }
 
   body {
-    @apply bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300;
+    @apply bg-white text-gray-900 dark:bg-black dark:text-gray-100 transition-colors duration-300;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -30,7 +30,7 @@
   }
 
   a {
-    @apply text-blue-600 dark:text-blue-400 no-underline transition-colors duration-200 hover:underline;
+    @apply text-blue-400 no-underline transition-colors duration-200 hover:text-blue-300;
   }
 }
 

@@ -1,5 +1,6 @@
-import Link from "next/link";
 import { Geist, Geist_Mono } from "next/font/google";
+import "./globals.css";
+import Header from "./components/Header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,20 +19,18 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `if (window.matchMedia('(prefers-color-scheme: dark)').matches) { document.documentElement.classList.add('dark'); }`,
+          }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <nav className="border-b border-zinc-200 dark:border-zinc-800">
-          <div className="max-w-3xl mx-auto px-4 py-4 flex gap-6">
-            <Link href="/" className="font-medium text-zinc-900 dark:text-zinc-100 hover:text-zinc-600 dark:hover:text-zinc-400">
-              Archive
-            </Link>
-            <Link href="/posts" className="font-medium text-zinc-900 dark:text-zinc-100 hover:text-zinc-600 dark:hover:text-zinc-400">
-              Posts
-            </Link>
-          </div>
-        </nav>
+        <Header />
         {children}
       </body>
     </html>

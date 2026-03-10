@@ -1,33 +1,20 @@
-import Link from "next/link";
-import { getPosts } from "./lib/posts";
+import CalendarImage from "./components/CalendarImage";
 
-export default async function Home() {
-  const posts = await getPosts();
-
+export default function Home() {
   return (
-    <main className="max-w-3xl mx-auto px-6 py-12 md:py-16">
-      <div className="mb-12 pb-8 border-b-2 border-slate-200 dark:border-slate-800">
-        <h1>Archive</h1>
-        <p className="text-lg text-slate-600 dark:text-slate-400 m-0">A collection of thoughts on tech and web development</p>
-      </div>
+    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
+      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+        <CalendarImage />
+        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
+          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
+            diary of theLiftedGifted
+          </h1>
+          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
+            cruisin down the street in my 64, jockin the freaks, clocking the dough, went to the park to get the scoop, knuckleheads out there cold shooting some hoops, a car pulls up who can it be, a fresh El Camino rolled, Kilo G. and a fade to black, hittin switches, smokin sacks, and tricks up the sleeve
+          </p>
+        </div>
 
-      <div className="space-y-8">
-        {posts.length === 0 ? (
-          <p className="text-center text-slate-600 dark:text-slate-400 py-8 italic">No posts yet. Check back soon.</p>
-        ) : (
-          posts.map((post) => (
-            <article
-              key={post.slug}
-              className="p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg transition-all duration-300 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-md hover:-translate-y-0.5"
-            >
-              <Link href={`/blog/${post.slug}`} className="block no-underline text-inherit">
-                <h2 className="text-blue-600 dark:text-blue-400 mb-2 text-xl md:text-lg hover:underline">{post.title}</h2>
-                <time className="block text-slate-600 dark:text-slate-400 text-sm">{post.date}</time>
-              </Link>
-            </article>
-          ))
-        )}
-      </div>
-    </main>
+      </main>
+    </div>
   );
 }
