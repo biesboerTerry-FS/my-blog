@@ -58,13 +58,22 @@ export default async function PostPage({ params }) {
             <h1 className="text-gray-900 dark:text-white mb-2">{post.title}</h1>
             <time className="block text-gray-600 dark:text-gray-500 text-base">{post.date}</time>
           </div>
-          <img
-            src={getImagePath("ostrich-skeleton.png")}
-            alt="Ostrich skeleton"
-            width={50}
-            height={50}
-            className="flex-shrink-0 dark:invert"
-          />
+          <div className="flex gap-3 flex-shrink-0">
+            <img
+              src={getImagePath("hubert.png")}
+              alt="Hubert skeleton"
+              width={64}
+              height={64}
+              className="rounded-full border-2 border-gray-900 dark:border-white object-cover"
+            />
+            <img
+              src={getImagePath("hubert.png")}
+              alt="Hubert skeleton inverted"
+              width={64}
+              height={64}
+              className="rounded-full border-2 border-gray-900 dark:border-white object-cover invert"
+            />
+          </div>
         </div>
       </header>
 

@@ -6,7 +6,7 @@ export default async function Archive() {
   const posts = await getPosts();
 
   return (
-    <main className="max-w-3xl mx-auto px-6 py-12 md:py-16">
+    <main className="max-w-3xl mx-auto px-6 py-6 md:py-8">
       <div className="mb-12 pb-8 border-b border-gray-300 dark:border-gray-700">
         <h1 className="text-gray-900 dark:text-white">Archive</h1>
         <p className="text-lg text-gray-600 dark:text-gray-400 m-0">A collection of thoughts on tech and web development</p>
