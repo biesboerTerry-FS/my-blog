@@ -8,13 +8,14 @@ const withMDX = createMDX({
 const nextConfig = {
   reactCompiler: true,
   output: 'export',
-  basePath: '/my-blog',
+  basePath: '/diaryOfTheLiftedGifted',
+  trailingSlash: true,
   pageExtensions: ['js', 'jsx', 'md', 'mdx'],
   images: {
     unoptimized: true,
   },
   env: {
-    NEXT_PUBLIC_BASE_PATH: '/my-blog',
+    NEXT_PUBLIC_BASE_PATH: '/diaryOfTheLiftedGifted',
   },
 };
 
