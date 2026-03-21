@@ -4,7 +4,14 @@ import matter from 'gray-matter';
 
 function extractLegacyTitle(rawContent, slug) {
   const titleMatch = rawContent.match(/^# (.+)$/m);
-  return titleMatch ? titleMatch[1] : slug;
+  if (titleMatch) return titleMatch[1].trim();
+
+  const firstContentLine = rawContent
+    .split('\n')
+    .map((line) => line.trim())
+    .find((line) => line.length > 0 && !line.startsWith('**Date:**'));
+
+  return firstContentLine || slug;
 }
 
 function extractLegacyDate(rawContent) {
