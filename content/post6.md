@@ -2,7 +2,11 @@
 
 **Date:** March 25, 2026
 
-![Password Hashing](/passwordHashing.png)
+<img
+	src="/passwordHashing.png"
+	alt="Password Hashing"
+	style="display:block;width:100%;max-width:680px;height:320px;object-fit:cover;object-position:center;margin:0 auto 1.5rem;border-radius:10px;"
+/>
 
 In the digital world, security is paramount, and nowhere is this more critical than with user passwords. When we create an account and set a password, we often assume that password is stored exactly as we typed it. However, in a well-designed system, this is far from the truth. Instead, our passwords undergo a process called hashing.
 
