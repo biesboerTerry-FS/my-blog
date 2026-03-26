@@ -1,4 +1,4 @@
-Salty Hashes: The Secret Ingredient to Password Security
+# Salty Hashes: The Secret Ingredient to Password Security
 
 **Date:** March 25, 2026
 
