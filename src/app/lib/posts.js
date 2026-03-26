@@ -3,8 +3,26 @@ import path from 'path';
 import matter from 'gray-matter';
 
 function extractLegacyTitle(rawContent, slug) {
-  const titleMatch = rawContent.match(/^# (.+)$/m);
-  return titleMatch ? titleMatch[1] : slug;
+  const headingMatch = rawContent.match(/^\s*#\s+(.+)$/m);
+  if (headingMatch) {
+    return headingMatch[1].trim();
+  }
+
+  // Support older posts where the first non-empty line is a plain-text title.
+  const firstNonEmptyLine = rawContent
+    .split('\n')
+    .map((line) => line.trim())
+    .find((line) => line.length > 0);
+
+  if (
+    firstNonEmptyLine &&
+    !firstNonEmptyLine.startsWith('**Date:**') &&
+    !firstNonEmptyLine.startsWith('![')
+  ) {
+    return firstNonEmptyLine;
+  }
+
+  return slug;
 }
 
 function extractLegacyDate(rawContent) {
