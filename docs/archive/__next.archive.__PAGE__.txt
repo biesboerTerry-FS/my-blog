@@ -1,0 +1,70 @@
+1:"$Sreact.fragment"
+2:I[30203,["/diaryOfTheLiftedGifted/_next/static/chunks/8cafa35f82b865a1.js","/diaryOfTheLiftedGifted/_next/static/chunks/d6d26d23e58c9312.js"],"default"]
+f:I[97367,["/diaryOfTheLiftedGifted/_next/static/chunks/ff1a16fafef87110.js","/diaryOfTheLiftedGifted/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
+10:"$Sreact.suspense"
+3:T82e,![Password Hashing](/passwordHashing.png)
+
+In the digital world, security is paramount, and nowhere is this more critical than with user passwords. When we create an account and set a password, we often assume that password is stored exactly as we typed it. However, in a well-designed system, this is far from the truth. Instead, our passwords undergo a process called hashing.
+
+Password hashing is a one-way cryptographic function that transforms a password into a fixed-size string of characters, known as a hash. The key here is "one-way"—you can easily generate a hash from a password, but you cannot reverse the process to get the original password back from the hash. This is a fundamental security measure. If a database is ever compromised, attackers will only get these hashes, not the actual passwords.
+
+But simply hashing isn't enough. A common attack called a "rainbow table" tries to pre-compute hashes for common passwords. To combat this, we introduce salting. A unique, randomly generated string called a "salt" is added to each password before it's hashed. This means even if two users have the exact same password, their hashes will be different because their salts are different. The salt is stored alongside the hash in the database.
+
+Beyond salting, we also consider the computational cost of hashing. Older, faster algorithms like MD5 or SHA-1 are no longer suitable for passwords because modern computers can crack them too quickly. We now use algorithms specifically designed to be slow and computationally intensive, such as bcrypt, scrypt, or Argon2. This slowness is a feature, not a bug, making brute-force attacks economically unfeasible for attackers.
+
+As web designers, while we might not be implementing these hashing algorithms ourselves, understanding their importance is crucial. It informs our discussions with backend developers, helps us design secure user flows, and ultimately contributes to building trust with our users by protecting their most sensitive information. This invisible layer of security is a cornerstone of responsible web development.4:T6e4,![API Architecture Diagram](/reactNative.jpg)
+
+In our previous work with APIs and Heroku, we focused on invisible infrastructure. As Web Design majors, though, our goal is the interface. In 2026, the web no longer lives only in a browser. React Native takes the design principles we have built with HTML and CSS and applies them to mobile apps.
+
+The transition feels familiar. If you understand component-based React for the web, you already know 80% of React Native. Instead of a `<div>` you use a `<View>`. Instead of an `<a>` tag, you use `<Pressable>`. That shift in syntax is minor, but it lets you build high-performance apps that live on a home screen rather than a bookmarks bar.
+
+The biggest hurdle for a web designer moving to mobile is the styling engine. React Native uses CSS-like syntax, but it is a subset. There are no floats or traditional grid layouts. Everything is Flexbox. Mobile screens are unforgiving too; designs must be fully fluid to handle notch shapes, dynamic islands, and varying aspect ratios.
+
+Just as with API deployments, the real work often lives in the environment. In React Native, that means stepping outside the browser DevTools and into mobile emulators and tools like Flipper. You are no longer just checking if a font looks right. You are checking whether a touch target is large enough for a thumb and whether haptic feedback fires correctly when a button is pressed.
+
+The real value of React Native within a CS Web Design degree is versatility. By the end of this track you are not just a web developer or a mobile developer. You are a product engineer who can maintain a single design system that feels consistent on a 27-inch monitor and a 6-inch phone. Your designs will never be limited by the platform they run on.0:{"buildId":"MJ2Iikc6CR--MODFuOCk7","rsc":["$","$1","c",{"children":[["$","main",null,{"className":"max-w-3xl mx-auto px-6 py-6 md:py-8","children":[["$","div",null,{"className":"mb-12 pb-8 border-b","style":{"borderColor":"#999"},"children":[["$","h1",null,{"className":"text-gray-900 dark:text-white","children":"Archive"}],["$","p",null,{"className":"text-lg text-gray-600 dark:text-gray-400 m-0","children":"A collection of thoughts on tech and web development"}]]}],["$","div",null,{"className":"space-y-8","children":[["$","$L2","post6",{"post":{"slug":"post6","title":"post6","date":"March 25, 2026","content":"$3"},"index":0,"totalPosts":6}],["$","$L2","post5",{"post":{"slug":"post5","title":"post5","date":"March 20, 2026","content":"$4"},"index":1,"totalPosts":6}],"$L5","$L6","$L7","$L8"]}]]}],["$L9"],"$La"]}],"loading":null,"isPartial":false}
+b:T79f,![API Architecture Diagram](/api-architecture.png)
+
+Getting a first API up and running is a significant milestone when transitioning from frontend to backend development. Most of us start with HTML and CSS where every change is visible immediately. Moving into Node.js and Express requires a different mindset because you are building the invisible infrastructure that powers those visual elements.
+
+The setup usually begins with the basics like installing Node and configuring Express routes. While the lectures make it sound simple, the real learning happens when you start dealing with databases and environment variables. These variables are crucial for security because they keep sensitive information like API keys out of your public code. Learning to hide these keys is one of the first major hurdles in professionalizing your workflow.
+
+Debugging on the backend is a unique challenge. You cannot rely on a browser console to show you a broken layout. Instead, you spend your time in Postman or terminal logs looking for specific status codes. It is common to have a project that runs perfectly on your laptop but fails the moment it hits a live server. Usually, this comes down to minor configuration differences between your local environment and the hosting platform.
+
+Deploying to Heroku and GitHub Pages is the final step in the process. GitHub Pages handles the frontend static files while Heroku provides the environment for the Node server to live. Linking these two requires a solid understanding of Cross Origin Resource Sharing so the frontend has permission to talk to the backend.
+
+Completing this assignment is less about writing perfect code and more about understanding how different systems communicate. Once you successfully navigate your first deployment, the backend feels less like a mystery and more like a manageable part of the development process. Consistent practice with deployment tools makes the whole system click.5:["$","$L2","post4",{"post":{"slug":"post4","title":"Building and Deploying an API on Heroku and GitHub Pages","date":"March 15, 2026","content":"$b"},"index":2,"totalPosts":6}]
+c:T76c,Implementing dark mode support has become essential for user experience. With Tailwind's `dark:` prefix and native OS theme detection, adding this feature is straightforward. What stands out is how it improves accessibility and reduces eye strain for users browsing at night. The practice of building dark mode in from the start, rather than retrofitting it, leads to better overall design decisions and a more thoughtful color palette that works across both light and dark contexts.
+
+Accessibility is the primary driver. Users with light sensitivity greatly appreciate dark mode options. Studies show that dark interfaces reduce eye strain in low-light environments and can even improve battery life on OLED screens. More practically, many users simply prefer the aesthetic. Offering dark mode isn't a nice-to-have anymore; it's an expectation.
+
+Designing with dark mode in mind from the beginning changes your thinking about color relationships. You stop thinking about colors in isolation and start thinking about contrast, readability, and visual hierarchy across themes. Your design becomes more robust and thoughtful.
+
+Implementation is surprisingly simple with modern tools. Media queries like `prefers-color-scheme` detect the user's system preference automatically. If you're using Tailwind, you literally just add the `dark:` prefix to your classes. Add a toggle for manual override, persist the user's choice to localStorage, and you're done.
+
+The technical overhead is minimal, but the user experience improvement is substantial. I've seen the dark mode toggle get used more than most features on a site. Users appreciate the attention to detail and the respect for their preferences.
+
+My recommendation: build dark mode into every project from day one. It takes minimal effort upfront and ensures your site works well for everyone, regardless of their environment or personal preference.6:["$","$L2","post3",{"post":{"slug":"post3","title":"Dark Mode Support in Modern Web Apps","date":"March 10, 2026","content":"$c"},"index":3,"totalPosts":6}]
+d:T71f,Utility-first CSS with Tailwind has transformed my approach to styling. Initially skeptical about inline classes cluttering my JSX, I've come to appreciate how it accelerates development and maintains consistency. The ability to rapidly prototype without context-switching to CSS files is invaluable. Plus, the tree-shaking capabilities mean your production bundle stays lean. Highly recommended for anyone doing modern frontend work.
+
+When I first encountered Tailwind, I was firmly in the BEM methodology camp. I thought utility classes were a step backward. How wrong I was. The paradigm shift took some time, but now I can't imagine styling any other way. Building responsive designs has never been easier—media query prefixes like `md:` and `lg:` let you define breakpoint-specific styles directly in your markup.
+
+The consistency argument is worth revisiting. By constraints in spacing, colors, and typography, Tailwind ensures your designs maintain visual coherence. Everyone on the team is working with the same palette of values, eliminating arbitrary decisions about shade variations or spacing multiples.
+
+Composability is another killer feature. You can extract common patterns into components without worrying about style management across different contexts. The arbitrary value syntax lets you go beyond the predefined scale when absolutely necessary, but you'll find you rarely need to.
+
+Dark mode support is baked in. Adding `dark:` variants to your classes gives you professional dark mode without extra effort. Combined with proper color variables in your design system, you have elegant theming out of the box.
+
+Optimization is handled automatically. Tailwind's JIT compiler only includes CSS for classes actually used in your codebase, resulting in tiny production bundles. No unused CSS bloat, ever.7:["$","$L2","post2",{"post":{"slug":"post2","title":"The Power of Tailwind CSS","date":"March 9, 2026","content":"$d"},"index":4,"totalPosts":6}]
+e:T64d,Next.js has been a game-changer for modern web development. Coming from traditional React development, the framework's built-in features like file-based routing, API routes, and automatic code splitting save so much boilerplate. The App Router feels intuitive once you get past the initial learning curve, and the integration with Vercel makes deployment seamless. What I appreciate most is how it scales from personal projects to enterprise applications without requiring a complete rewrite.
+
+The transition from Pages Router to App Router was initially intimidating, but the benefits became clear immediately. The ability to colocate layouts with routes makes organizing large applications so much simpler. I no longer find myself hunting through deeply nested folder structures to understand the application architecture.
+
+One of the standout features is Server Components. Being able to directly query databases and fetch data without worrying about client-side data fetching is liberating. SEO is handled automatically, and the performance improvements are tangible. Client-side interactivity still works seamlessly where needed, with the best of both worlds.
+
+The development experience is smooth too. Hot module replacement works flawlessly, TypeScript integration is built-in, and debugging is straightforward. Add in the extensive documentation and vibrant community, and you have a framework that's both powerful and approachable.
+
+If you're still using Create React App or plain React, I'd strongly encourage exploring Next.js. The learning curve is minimal, and the productivity gains are substantial.8:["$","$L2","post1",{"post":{"slug":"post1","title":"Getting Started with Next.js","date":"March 8, 2026","content":"$e"},"index":5,"totalPosts":6}]
+9:["$","script","script-0",{"src":"/diaryOfTheLiftedGifted/_next/static/chunks/d6d26d23e58c9312.js","async":true}]
+a:["$","$Lf",null,{"children":["$","$10",null,{"name":"Next.MetadataOutlet","children":"$@11"}]}]
+11:null
