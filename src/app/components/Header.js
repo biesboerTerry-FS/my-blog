@@ -7,13 +7,18 @@ import { getImagePath } from '../lib/imagePath';
 
 export default function Header() {
   const pathname = usePathname();
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+  const normalizedPathname =
+    basePath && pathname.startsWith(basePath)
+      ? pathname.slice(basePath.length) || '/'
+      : pathname;
 
   // Hide header on individual post pages
-  const isPostPage = pathname.startsWith('/blog/');
+  const isPostPage = normalizedPathname.startsWith('/blog/');
   if (isPostPage) return null;
 
   // Show "Archive" only on home page, otherwise show "Home"
-  const isHome = pathname === '/';
+  const isHome = normalizedPathname === '/';
 
   return (
     <nav style={{ borderBottom: '1px solid #999' }}>

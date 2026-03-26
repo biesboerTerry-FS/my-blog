@@ -1,5 +1,5 @@
 export function getImagePath(filename) {
-  // Get basePath from environment or default to empty string for dev
-  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
-  return `${basePath}/${filename}`;
+  const basePath = (process.env.NEXT_PUBLIC_BASE_PATH || '').replace(/\/$/, '');
+  const normalizedFilename = String(filename || '').replace(/^\/+/, '');
+  return `${basePath}/${normalizedFilename}`;
 }
