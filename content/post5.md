@@ -6,7 +6,7 @@ Bridging the Gap: React Native for Web Designers
 
 In our previous work with APIs and Heroku, we focused on invisible infrastructure. As Web Design majors, though, our goal is the interface. In 2026, the web no longer lives only in a browser. React Native takes the design principles we have built with HTML and CSS and applies them to mobile apps.
 
-The transition feels familiar. If you understand component-based React for the web, you already know 80% of React Native. Instead of a <div> you use a <View>. Instead of an <a> tag, you use <Pressable>. That shift in syntax is minor, but it lets you build high-performance apps that live on a home screen rather than a bookmarks bar.
+The transition feels familiar. If you understand component-based React for the web, you already know 80% of React Native. Instead of a `<div>` you use a `<View>`. Instead of an `<a>` tag, you use `<Pressable>`. That shift in syntax is minor, but it lets you build high-performance apps that live on a home screen rather than a bookmarks bar.
 
 The biggest hurdle for a web designer moving to mobile is the styling engine. React Native uses CSS-like syntax, but it is a subset. There are no floats or traditional grid layouts. Everything is Flexbox. Mobile screens are unforgiving too; designs must be fully fluid to handle notch shapes, dynamic islands, and varying aspect ratios.
 
