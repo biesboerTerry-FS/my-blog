@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from 'next/link';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import remarkGfm from 'remark-gfm';
@@ -14,9 +15,33 @@ function resolveContentSrc(src) {
 }
 
 const mdxComponents = {
-  img: ({ src, alt, ...props }) => (
-    <img src={resolveContentSrc(src)} alt={alt || ''} {...props} />
-  ),
+  img: ({ src, alt, style, ...props }) => {
+    const resolvedSrc = resolveContentSrc(src);
+    const isPost6Hero = resolvedSrc?.includes('/passwordHashing.png');
+
+    return (
+      <img
+        src={resolvedSrc}
+        alt={alt || ''}
+        style={
+          isPost6Hero
+            ? {
+                display: 'block',
+                width: '100%',
+                maxWidth: '680px',
+                height: '220px',
+                objectFit: 'cover',
+                objectPosition: 'center',
+                margin: '0 auto 1.5rem',
+                borderRadius: '10px',
+                ...style,
+              }
+            : style
+        }
+        {...props}
+      />
+    );
+  },
 };
 
 export async function generateStaticParams() {
