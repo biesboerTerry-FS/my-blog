@@ -40,5 +40,16 @@
   a {
     @apply text-blue-400 no-underline transition-colors duration-200 hover:text-blue-300;
   }
+
+  img[alt='Password Hashing'] {
+    display: block;
+    width: 100%;
+    max-width: 680px;
+    height: 320px;
+    object-fit: cover;
+    object-position: center;
+    margin: 0 auto 1.5rem;
+    border-radius: 10px;
+  }
 }
 
