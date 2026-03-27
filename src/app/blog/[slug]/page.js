@@ -96,7 +96,6 @@ export default async function PostPage({ params }) {
         <CalendarImage dateString={post.date} />
       </div>
 
-      {/* Navigation Chevrons */}
       <div className="flex items-center justify-between pt-4 mb-8 border-t border-gray-300 dark:border-gray-700">
         {prevPost ? (
           <Link

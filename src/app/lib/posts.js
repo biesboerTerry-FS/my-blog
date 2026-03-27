@@ -8,7 +8,6 @@ function extractLegacyTitle(rawContent, slug) {
     return headingMatch[1].trim();
   }
 
-  // Support older posts where the first non-empty line is a plain-text title.
   const firstNonEmptyLine = rawContent
     .split('\n')
     .map((line) => line.trim())

@@ -8,18 +8,17 @@ import CalendarImage from './CalendarImage';
 export default function ArchivePost({ post, index, totalPosts }) {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
-  // Calculate scale based on distance from hovered post
   let scale = 1;
   if (hoveredIndex !== null) {
     const distance = Math.abs(index - hoveredIndex);
     if (index === hoveredIndex) {
-      scale = 1.05; // Hovered post slightly larger
+      scale = 1.05; 
     } else if (distance === 1) {
-      scale = 0.98; // Adjacent posts slightly smaller
+      scale = 0.98; 
     } else if (distance === 2) {
-      scale = 0.95; // Two posts away more shrunk
+      scale = 0.95; 
     } else {
-      scale = 0.92; // Far posts most shrunk
+      scale = 0.92; 
     }
   }
 

@@ -15,8 +15,8 @@ export default function CalendarImage({ dateString }) {
       <img
         src={getImagePath(`${day}.calendar.png`)}
         alt={`Calendar - ${day}`}
-        width={36}
-        height={36}
+        width={24}
+        height={24}
         className="dark:invert"
       />
     </div>
