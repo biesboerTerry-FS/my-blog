@@ -23,7 +23,7 @@ export default function Header() {
       <div className="flex items-center justify-between max-w-3xl px-4 py-4 mx-auto">
         <Link
           href={isHome ? '/archive' : '/'}
-          className="font-medium text-gray-900 transition-colors dark:text-gray-100 hover:text-orange-400 dark:hover:text-orange-400"
+          className="font-medium text-gray-100 transition-colors dark:text-gray-100 hover:text-orange-400 dark:hover:text-orange-400"
         >
           {isHome ? 'to archive' : 'to home'}
         </Link>

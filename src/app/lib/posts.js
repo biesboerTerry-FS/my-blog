@@ -92,7 +92,7 @@ export async function getPosts() {
       })
   );
 
-  // Sort by date, newest first
+  
   return posts.sort((a, b) => toTimestamp(b.date) - toTimestamp(a.date));
 }
 

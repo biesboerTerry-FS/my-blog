@@ -46,7 +46,4 @@
     @apply text-gray-100 no-underline transition-colors duration-200 hover:text-orange-400;
   }
 
-  a::before {
-    content: "← ";
-  }
 }

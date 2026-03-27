@@ -14,15 +14,15 @@ export default function NotFound() {
       <div className="flex flex-col gap-2">
         <Link
           href="/"
-          className="inline-block text-sm text-orange-700 transition-colors dark:text-orange-300 hover:text-orange-400 dark:hover:text-orange-400"
+          className="inline-block text-sm text-gray-100 transition-colors dark:text-gray-100 hover:text-orange-400 dark:hover:text-orange-400"
         >
-          ← to home
+          to home
         </Link>
         <Link
           href="/archive"
-          className="inline-block text-sm text-orange-700 transition-colors dark:text-orange-300 hover:text-orange-400 dark:hover:text-orange-400"
+          className="inline-block text-sm text-gray-100 transition-colors dark:text-gray-100 hover:text-orange-400 dark:hover:text-orange-400"
         >
-          ← to archive
+          to archive
         </Link>
       </div>
     </main>
