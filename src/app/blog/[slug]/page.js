@@ -48,6 +48,11 @@ export default async function PostPage({ params }) {
   const resolvedParams = await params;
   const allPosts = await getPosts();
   const post = await getPostBySlug(resolvedParams.slug);
+  const postDate = post ? new Date(post.date) : null;
+  const postDateTime =
+    postDate && !Number.isNaN(postDate.getTime())
+      ? postDate.toISOString().slice(0, 10)
+      : undefined;
 
   if (!post) {
     return (
@@ -89,7 +94,10 @@ export default async function PostPage({ params }) {
       <div className="flex items-start justify-between mb-8">
         <div>
           <h1 className="mb-2 text-gray-900 dark:text-white">{post.title}</h1>
-          <time className="block text-base text-orange-700 dark:text-orange-300">
+          <time
+            dateTime={postDateTime}
+            className="block text-base text-orange-700 dark:text-orange-300"
+          >
             {post.date}
           </time>
         </div>

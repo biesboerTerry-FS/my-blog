@@ -3,5 +3,10 @@
     "paths": {
       "@/*": ["./src/*"]
     }
-  }
+  },
+  "typeAcquisition": {
+    "enable": false
+  },
+  "include": ["src/**/*.js", "src/**/*.jsx", "*.js", "*.mjs"],
+  "exclude": ["node_modules", ".next", "out", "docs"]
 }

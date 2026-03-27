@@ -7,6 +7,10 @@ import CalendarImage from './CalendarImage';
 
 export default function ArchivePost({ post, index, totalPosts }) {
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const postDate = new Date(post.date);
+  const postDateTime = Number.isNaN(postDate.getTime())
+    ? undefined
+    : postDate.toISOString().slice(0, 10);
 
   let scale = 1;
   if (hoveredIndex !== null) {
@@ -42,7 +46,10 @@ export default function ArchivePost({ post, index, totalPosts }) {
             <h2 className="mb-2 text-xl text-gray-800 transition-colors dark:text-gray-200 md:text-lg hover:text-orange-500 dark:hover:text-orange-400">
               {post.title}
             </h2>
-            <time className="block text-sm text-orange-700 dark:text-orange-300">
+            <time
+              dateTime={postDateTime}
+              className="block text-sm text-orange-700 dark:text-orange-300"
+            >
               {post.date}
             </time>
           </div>
