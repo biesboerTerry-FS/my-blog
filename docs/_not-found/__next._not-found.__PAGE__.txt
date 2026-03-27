@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[22016,["/diaryOfTheLiftedGifted/_next/static/chunks/32c503cc6ac72ebd.js"],""]
+3:I[97367,["/diaryOfTheLiftedGifted/_next/static/chunks/ff1a16fafef87110.js","/diaryOfTheLiftedGifted/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"buildId":"7uio4nav5Y5pjq6RiO9E_","rsc":["$","$1","c",{"children":[["$","main",null,{"className":"max-w-3xl px-6 py-12 mx-auto md:py-16","children":[["$","h1",null,{"className":"mb-3 text-gray-900 dark:text-white","children":"404"}],["$","p",null,{"className":"mb-8 text-orange-700 dark:text-orange-300","children":"This page could not be found."}],["$","div",null,{"className":"flex flex-col gap-2","children":[["$","$L2",null,{"href":"/","className":"inline-block text-sm text-orange-700 transition-colors dark:text-orange-300 hover:text-orange-500 dark:hover:text-orange-200","children":"← to home"}],["$","$L2",null,{"href":"/archive","className":"inline-block text-sm text-orange-700 transition-colors dark:text-orange-300 hover:text-orange-500 dark:hover:text-orange-200","children":"← to archive"}]]}]]}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
+5:null
