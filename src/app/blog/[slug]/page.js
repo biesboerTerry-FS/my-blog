@@ -24,19 +24,21 @@ const mdxComponents = {
         src={resolvedSrc}
         alt={alt || ''}
         style={
-          isPost6Hero
-            ? {
-                display: 'block',
-                width: '100%',
-                maxWidth: '680px',
-                height: '220px',
-                objectFit: 'cover',
-                objectPosition: 'center',
-                margin: '0 auto 1.5rem',
-                borderRadius: '10px',
-                ...style,
-              }
-            : style
+          // isPost6Hero
+          //   ? {
+          //       display: 'block',
+          //       width: '100%',
+          //       maxWidth: '680px',
+          //       height: '220px',
+          //       objectFit: 'cover',
+          //       objectPosition: 'center',
+          //       margin: '0 auto 1.5rem',
+          //       borderRadius: '10px',
+          //       ...style,
+          //     }
+            
+          //     :
+             style
         }
         {...props}
       />
