@@ -43,7 +43,7 @@ export default function ArchivePost({ post, index, totalPosts }) {
             <CalendarImage dateString={post.date} />
           </div>
           <div className="flex-1">
-            <h2 className="mb-2 text-xl text-gray-800 transition-colors dark:text-gray-200 md:text-lg hover:text-orange-500 dark:hover:text-orange-400">
+            <h2 className="mb-2 text-xl text-gray-800 transition-colors dark:text-gray-200 md:text-lg hover:text-orange-400 dark:hover:text-orange-400">
               {post.title}
             </h2>
             <time

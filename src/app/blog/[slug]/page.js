@@ -60,7 +60,7 @@ export default async function PostPage({ params }) {
         <h1 className="text-gray-900 dark:text-white">Post not found</h1>
         <Link
           href="/archive"
-          className="inline-block mb-8 text-sm text-orange-700 transition-colors dark:text-orange-300 hover:text-orange-500 dark:hover:text-orange-200"
+          className="inline-block mb-8 text-sm text-orange-700 transition-colors dark:text-orange-300 hover:text-orange-400 dark:hover:text-orange-400"
         >
           ← to archive
         </Link>
@@ -79,21 +79,23 @@ export default async function PostPage({ params }) {
       <div className="flex flex-col gap-2 mb-8">
         <Link
           href="/archive"
-          className="inline-block text-sm text-orange-700 transition-colors dark:text-orange-300 hover:text-orange-500 dark:hover:text-orange-200"
+          className="inline-block text-sm text-orange-700 transition-colors dark:text-orange-300 hover:text-orange-400 dark:hover:text-orange-400"
         >
           ← to archive
         </Link>
         <Link
           href="/"
-          className="inline-block text-sm text-orange-700 transition-colors dark:text-orange-300 hover:text-orange-500 dark:hover:text-orange-200"
+          className="inline-block text-sm text-orange-700 transition-colors dark:text-orange-300 hover:text-orange-400 dark:hover:text-orange-400"
         >
           ← to home
         </Link>
       </div>
 
-      <div className="flex items-start justify-between mb-8">
-        <div>
-          <h1 className="mb-2 text-gray-900 dark:text-white">{post.title}</h1>
+      <div className="grid items-start grid-cols-[1fr_auto] gap-4 mb-8 md:min-h-38">
+        <div className="min-h-32">
+          <h1 className="mb-2 text-gray-900 dark:text-white min-h-24">
+            {post.title}
+          </h1>
           <time
             dateTime={postDateTime}
             className="block text-base text-orange-700 dark:text-orange-300"
@@ -101,14 +103,17 @@ export default async function PostPage({ params }) {
             {post.date}
           </time>
         </div>
-        <CalendarImage dateString={post.date} />
+        <div className="pt-1">
+          <CalendarImage dateString={post.date} />
+        </div>
       </div>
 
-      <div className="flex items-center justify-between pt-4 mb-8 border-t border-gray-300 dark:border-gray-700">
+      <div className="pt-4 mb-8 border-t border-gray-300 dark:border-gray-700">
+        <div className="grid grid-cols-2 gap-6 min-h-18">
         {prevPost ? (
           <Link
             href={`/blog/${prevPost.slug}`}
-            className="flex items-center gap-2 text-orange-700 transition-colors dark:text-orange-300 hover:text-orange-500 dark:hover:text-orange-200"
+            className="flex items-center gap-2 text-orange-700 transition-colors dark:text-orange-300 hover:text-orange-400 dark:hover:text-orange-400"
             title={prevPost.title}
           >
             <svg
@@ -124,19 +129,41 @@ export default async function PostPage({ params }) {
                 d="M15 19l-7-7 7-7"
               />
             </svg>
-            <span className="hidden text-sm sm:inline">{prevPost.title}</span>
+            <span
+              className="hidden text-sm leading-6 sm:block"
+              style={{
+                display: '-webkit-box',
+                WebkitLineClamp: 2,
+                WebkitBoxOrient: 'vertical',
+                overflow: 'hidden',
+                maxHeight: '3rem',
+              }}
+            >
+              {prevPost.title}
+            </span>
           </Link>
         ) : (
-          <div />
+          <div className="h-full" />
         )}
 
         {nextPost ? (
           <Link
             href={`/blog/${nextPost.slug}`}
-            className="flex items-center gap-2 text-right text-orange-700 transition-colors dark:text-orange-300 hover:text-orange-500 dark:hover:text-orange-200"
+            className="flex items-center justify-end gap-2 text-right text-orange-700 transition-colors dark:text-orange-300 hover:text-orange-400 dark:hover:text-orange-400"
             title={nextPost.title}
           >
-            <span className="hidden text-sm sm:inline">{nextPost.title}</span>
+            <span
+              className="hidden text-sm leading-6 sm:block"
+              style={{
+                display: '-webkit-box',
+                WebkitLineClamp: 2,
+                WebkitBoxOrient: 'vertical',
+                overflow: 'hidden',
+                maxHeight: '3rem',
+              }}
+            >
+              {nextPost.title}
+            </span>
             <svg
               className="w-6 h-6"
               fill="none"
@@ -152,8 +179,9 @@ export default async function PostPage({ params }) {
             </svg>
           </Link>
         ) : (
-          <div />
+          <div className="h-full" />
         )}
+        </div>
       </div>
 
       <div className="space-y-6 text-lg leading-relaxed prose prose-lg text-gray-900 dark:text-gray-100 dark:prose-invert max-w-none">
